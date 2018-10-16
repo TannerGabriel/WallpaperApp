@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setSupportActionBar(main_toolbar)
+        supportActionBar?.title = "Wallpapers"
 
         ListenerUtil.setFragment(supportFragmentManager, WallpaperFragment())
 

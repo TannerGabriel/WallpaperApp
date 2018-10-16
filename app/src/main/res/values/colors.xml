@@ -3,4 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="mainTextColor">#FFF</color>
+    <color name="toolbarColor">#FFF</color>
+    <color name="mainFabColor">#ff6348</color>
 </resources>

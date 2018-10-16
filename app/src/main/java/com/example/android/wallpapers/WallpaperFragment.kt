@@ -1,7 +1,6 @@
 package com.example.android.wallpapers
 
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.StaggeredGridLayoutManager
@@ -38,10 +37,17 @@ class WallpaperFragment() : Fragment() {
 
         val wallpaper = Wallpaper("veeterzy","https://images.pexels.com/photos/355423/pexels-photo-355423.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
         groupAdapter.add(WallpaperItem(wallpaper,getContext()!!))
-        groupAdapter.add(WallpaperItem(wallpaper, context!!))
-        groupAdapter.add(WallpaperItem(wallpaper, context!!))
-        groupAdapter.add(WallpaperItem(wallpaper, context!!))
+        groupAdapter.add(WallpaperItem(wallpaper, activity?.baseContext!!))
+        groupAdapter.add(WallpaperItem(wallpaper, activity?.applicationContext!!))
+        groupAdapter.add(WallpaperItem(wallpaper, activity?.application!!))
         groupAdapter.add(WallpaperItem(wallpaper , context!!))
+        val wallpaper2 = Wallpaper("veeterzy","https://images.pexels.com/photos/1115487/pexels-photo-1115487.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+        groupAdapter.add(WallpaperItem(wallpaper2 , context!!))
+        groupAdapter.add(WallpaperItem(wallpaper2 , context!!))
+        groupAdapter.add(WallpaperItem(wallpaper2 , context!!))
+        groupAdapter.add(WallpaperItem(wallpaper2 , context!!))
+        groupAdapter.add(WallpaperItem(wallpaper2 , context!!))
+
 
         return inflater.inflate(R.layout.fragment_wallpaper, container, false)
 
@@ -56,7 +62,7 @@ class WallpaperFragment() : Fragment() {
             adapter = groupAdapter
         }
 
-        val wallpaper = Wallpaper("veeterzy","https://images.pexels.com/photos/355423/pexels-photo-355423.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+        val wallpaper = Wallpaper("veeterzy","https://images.pexels.com/photos/1482778/pexels-photo-1482778.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
 
         groupAdapter.add(WallpaperItem(wallpaper , context!!))
         groupAdapter.add(WallpaperItem(wallpaper , context!!))
