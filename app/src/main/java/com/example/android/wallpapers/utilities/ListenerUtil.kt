@@ -4,7 +4,8 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import com.example.android.wallpapers.*
-import com.example.android.wallpapers.wallpapers.FavouritesFragment
+import com.example.android.wallpapers.FavouritesFragment
+import com.example.android.wallpapers.wallpapers.WallpaperFragment
 
 class  ListenerUtil{
     companion object {

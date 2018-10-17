@@ -1,4 +1,4 @@
-package com.example.android.wallpapers
+package com.example.android.wallpapers.wallpapers
 
 
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.android.wallpapers.R
 import com.example.android.wallpapers.data.Wallpaper
 import com.example.android.wallpapers.item.WallpaperItem
 import com.xwray.groupie.GroupAdapter

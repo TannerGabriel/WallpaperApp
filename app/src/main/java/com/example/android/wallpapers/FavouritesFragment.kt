@@ -1,4 +1,4 @@
-package com.example.android.wallpapers.wallpapers
+package com.example.android.wallpapers
 
 
 import android.os.Bundle
