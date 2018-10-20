@@ -10,10 +10,12 @@ import com.example.android.wallpapers.wallpapers.WallpaperFragment
 class  ListenerUtil{
     companion object {
 
+        private var selectedFragment : Fragment? = null
+
         fun getBottomNavigationListener(supportFragmentManager: FragmentManager): BottomNavigationView.OnNavigationItemSelectedListener{
             val  navListener = BottomNavigationView.OnNavigationItemSelectedListener(){
 
-                var selectedFragment : Fragment? = null
+
                 when(it.itemId){
                     R.id.wallpapers -> {
                         selectedFragment = WallpaperFragment()
@@ -48,5 +50,8 @@ class  ListenerUtil{
             supportFragmentManager.beginTransaction().replace(R.id.fragment_holder, fragment).commit()
         }
 
+        fun getSelectedFragment(): Fragment{
+            return selectedFragment!!
+        }
     }
 }

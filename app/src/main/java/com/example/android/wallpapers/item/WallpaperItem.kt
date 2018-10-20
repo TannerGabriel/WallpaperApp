@@ -11,6 +11,7 @@ import com.squareup.picasso.Picasso
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.wallpaper_item.view.*
+import org.jetbrains.anko.design.snackbar
 
 class WallpaperItem (wallpaper: Wallpaper, context: Context): Item(){
 
@@ -22,7 +23,7 @@ class WallpaperItem (wallpaper: Wallpaper, context: Context): Item(){
         Picasso.get().load(wallpaper.pictureURl).placeholder(R.drawable.ic_wallpaper).into(viewHolder.itemView.wallpaper_imageview)
 
         viewHolder.itemView.like_button.setOnClickListener {
-
+            snackbar(viewHolder.itemView.item_layout, "Liked")
         }
 
         viewHolder.itemView.item_layout.setOnClickListener {
