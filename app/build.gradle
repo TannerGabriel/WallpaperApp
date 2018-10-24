@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 
 
 androidExtensions {
@@ -18,6 +19,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -71,8 +73,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-accessibility:3.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-web:3.0.2'
     androidTestImplementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.2'
-
     androidTestImplementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.2'
 
-
+    //Firebase
+    implementation 'com.google.firebase:firebase-firestore:17.0.1'
 }
