@@ -28,6 +28,10 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
+        setSupportActionBar(main_toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
         //Get the viewmodel factory
         val factory = InjectorUtils.provideWallpaperViewModelFactory()
 

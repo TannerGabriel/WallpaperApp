@@ -2,9 +2,12 @@ package com.example.android.wallpapers.item
 
 
 import android.content.Context
+import android.content.Intent
 import android.widget.Toast
 import com.example.android.wallpapers.R
+import com.example.android.wallpapers.categories.CategoryActivity
 import com.example.android.wallpapers.data.Category
+import com.example.android.wallpapers.utilities.Constants
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
@@ -17,7 +20,9 @@ class CategorieItem(val category: Category, val context: Context): Item(){
         viewHolder.itemView.categories_heading.text = category.title
 
         viewHolder.itemView.categories_layout.setOnClickListener {
-            Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, CategoryActivity::class.java)
+            intent.putExtra(Constants.CATEGORY, category)
+            context.startActivity(intent)
         }
     }
 

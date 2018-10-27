@@ -4,6 +4,7 @@ class  Constants{
 
     companion object {
         const val WALLPAPER = "wallpaper"
+        const val CATEGORY = "category"
     }
 }
 
