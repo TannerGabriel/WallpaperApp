@@ -1,6 +1,8 @@
 package com.example.android.wallpapers.wallpapers
 
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.StaggeredGridLayoutManager
@@ -10,6 +12,7 @@ import android.view.ViewGroup
 import com.example.android.wallpapers.R
 import com.example.android.wallpapers.data.Wallpaper
 import com.example.android.wallpapers.item.WallpaperItem
+import com.example.android.wallpapers.utilities.InjectorUtils
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.fragment_wallpaper.*
@@ -19,9 +22,12 @@ import kotlinx.android.synthetic.main.fragment_wallpaper.*
  * A simple [Fragment] subclass.
  *
  */
-class WallpaperFragment() : Fragment() {
+class WallpaperFragment : Fragment() {
 
     private lateinit var groupAdapter: GroupAdapter<ViewHolder>
+    private var data: List<Wallpaper>? = null
+
+    private var viewModel: WallpaperViewModel? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,22 +41,31 @@ class WallpaperFragment() : Fragment() {
         }
 
 
-
-        val wallpaper = Wallpaper("veeterzy","https://images.pexels.com/photos/355423/pexels-photo-355423.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
-        groupAdapter.add(WallpaperItem(wallpaper,getContext()!!))
-        groupAdapter.add(WallpaperItem(wallpaper, activity?.baseContext!!))
-        groupAdapter.add(WallpaperItem(wallpaper, activity?.applicationContext!!))
-        groupAdapter.add(WallpaperItem(wallpaper, activity?.application!!))
-        groupAdapter.add(WallpaperItem(wallpaper , context!!))
-        val wallpaper2 = Wallpaper("veeterzy","https://images.pexels.com/photos/1115487/pexels-photo-1115487.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
-        groupAdapter.add(WallpaperItem(wallpaper2 , context!!))
-        groupAdapter.add(WallpaperItem(wallpaper2 , context!!))
-        groupAdapter.add(WallpaperItem(wallpaper2 , context!!))
-        groupAdapter.add(WallpaperItem(wallpaper2 , context!!))
-        groupAdapter.add(WallpaperItem(wallpaper2 , context!!))
+        initUI()
 
 
         return inflater.inflate(R.layout.fragment_wallpaper, container, false)
+
+    }
+
+    private fun initUI() {
+        //Get the viewmodel factory
+        val factory = InjectorUtils.provideWallpaperViewModelFactory()
+
+        //Getting the viewmodel
+        viewModel = ViewModelProviders.of(this, factory).get(WallpaperViewModel::class.java)
+
+
+    }
+
+
+    private fun addObserver(){
+        viewModel?.getWallpapers()?.observe(this, Observer {wallpapers ->
+            data = null
+            data = wallpapers
+
+            updateAdapter()
+        })
 
     }
 
@@ -63,9 +78,16 @@ class WallpaperFragment() : Fragment() {
             adapter = groupAdapter
         }
 
-        val wallpaper = Wallpaper("veeterzy","https://images.pexels.com/photos/1482778/pexels-photo-1482778.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+        addObserver()
+    }
 
-        groupAdapter.add(WallpaperItem(wallpaper , context!!))
-        groupAdapter.add(WallpaperItem(wallpaper , context!!))
+    private fun updateAdapter() {
+        groupAdapter.clear()
+
+        if(data != null) {
+            data!!.forEach {
+                groupAdapter.add(WallpaperItem(it, context!!))
+            }
+        }
     }
 }
