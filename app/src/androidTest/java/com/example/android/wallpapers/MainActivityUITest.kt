@@ -19,6 +19,7 @@ import android.support.test.filters.LargeTest
 import android.view.View
 import android.view.ViewGroup
 import com.example.android.wallpapers.categories.CategoriesFragment
+import com.example.android.wallpapers.favourites.FavouritesFragment
 import com.example.android.wallpapers.utilities.ListenerUtil
 import com.example.android.wallpapers.wallpapers.WallpaperFragment
 import org.hamcrest.Description

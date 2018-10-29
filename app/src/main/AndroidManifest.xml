@@ -21,15 +21,31 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".wallpapers.DetailActivity" android:parentActivityName=".MainActivity">
+        <activity
+                android:name=".wallpapers.DetailActivity"
+                android:parentActivityName=".MainActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.example.android.wallpapers.MainActivity" />
+                    android:value="com.example.android.wallpapers.MainActivity"/>
         </activity>
-        <activity android:name=".categories.CategoryActivity" android:parentActivityName=".MainActivity">
+        <activity
+                android:name=".categories.CategoryActivity"
+                android:parentActivityName=".MainActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.example.android.wallpapers.MainActivity" />
+                    android:value="com.example.android.wallpapers.MainActivity"/>
+        </activity>
+        <activity android:name=".authentication.SignInActivity"
+                  android:parentActivityName=".MainActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.android.wallpapers.MainActivity"/>
+        </activity>
+        <activity android:name=".authentication.SignUpActivity"
+                  android:parentActivityName=".authentication.SignInActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.example.android.wallpapers.authentication.SignInActivity"/>
         </activity>
     </application>
 

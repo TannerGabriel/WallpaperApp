@@ -6,7 +6,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import com.example.android.wallpapers.utilities.AuthUtil
+import kotlinx.android.synthetic.main.fragment_settings.*
 
 
 /**
@@ -19,8 +20,19 @@ class SettingsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
+
+
+
         return inflater.inflate(R.layout.fragment_settings, container, false)
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        logout_button.setOnClickListener {
+            AuthUtil.logout()
+        }
     }
 
 

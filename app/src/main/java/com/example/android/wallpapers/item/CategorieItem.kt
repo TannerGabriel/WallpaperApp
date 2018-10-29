@@ -3,7 +3,6 @@ package com.example.android.wallpapers.item
 
 import android.content.Context
 import android.content.Intent
-import android.widget.Toast
 import com.example.android.wallpapers.R
 import com.example.android.wallpapers.categories.CategoryActivity
 import com.example.android.wallpapers.data.Category

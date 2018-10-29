@@ -4,7 +4,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import com.example.android.wallpapers.*
-import com.example.android.wallpapers.FavouritesFragment
+import com.example.android.wallpapers.favourites.FavouritesFragment
 import com.example.android.wallpapers.categories.CategoriesFragment
 import com.example.android.wallpapers.wallpapers.WallpaperFragment
 

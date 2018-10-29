@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".authentication.SignUpActivity">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/sign_up_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/toolbarColor"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <EditText
+            android:id="@+id/sign_up_email_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:layout_margin="@dimen/medium_margin"
+            android:layout_above="@id/sign_up_password_edittext"
+            android:inputType="textEmailAddress"/>
+
+
+    <EditText
+            android:id="@+id/sign_up_password_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/medium_margin"
+            android:inputType="textPassword"/>
+
+    <Button
+            android:id="@+id/sign_up_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
+            android:layout_below="@id/sign_up_password_edittext"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/medium_margin"
+            android:background="@drawable/button_background"
+            android:textColor="@color/mainTextColor"
+    />
+
+    <TextView
+            android:id="@+id/already_have_an_account_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Already have an Account?"
+            android:layout_below="@id/sign_up_button"
+            android:textAlignment="center"/>
+
+
+</RelativeLayout>

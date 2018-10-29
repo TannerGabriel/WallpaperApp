@@ -1,12 +1,15 @@
-package com.example.android.wallpapers
+package com.example.android.wallpapers.favourites
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.android.wallpapers.R
+import com.example.android.wallpapers.authentication.SignInActivity
+import com.google.firebase.auth.FirebaseAuth
 
 
 /**
@@ -19,7 +22,14 @@ class FavouritesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
+        val mAuth = FirebaseAuth.getInstance()
+
+        if(mAuth.currentUser == null){
+            val signInIntent = Intent(context!!, SignInActivity::class.java)
+            startActivity(signInIntent)
+        }
+
         return inflater.inflate(R.layout.fragment_favourites, container, false)
     }
 

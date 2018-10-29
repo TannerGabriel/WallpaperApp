@@ -38,6 +38,7 @@ class CategoryActivity : AppCompatActivity() {
             spanCount = 2
         }
 
+
         category = getIntentData()
         initUI()
     }
