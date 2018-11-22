@@ -7,6 +7,7 @@ import com.example.android.wallpapers.wallpapers.DetailActivity
 import com.example.android.wallpapers.R
 import com.example.android.wallpapers.data.Wallpaper
 import com.example.android.wallpapers.utilities.Constants
+import com.example.android.wallpapers.utilities.DataUtil
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
@@ -30,6 +31,10 @@ class WallpaperItem (wallpaper: Wallpaper, context: Context): Item(){
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra(Constants.WALLPAPER, wallpaper)
             context.startActivity(intent)
+        }
+
+        viewHolder.itemView.like_button.setOnClickListener {
+            DataUtil.setFavourite(wallpaper)
         }
     }
 
