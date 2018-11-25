@@ -5,11 +5,31 @@
              android:layout_height="match_parent"
              tools:context=".SettingsFragment">
 
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_margin="@dimen/medium_margin">
 
-    <Button
-            android:id="@+id/logout_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"/>
+        <TextView
+                android:id="@+id/account_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account"
+                android:textSize="22dp"
+                android:layout_marginBottom="@dimen/small_margin"
+                android:textStyle="bold"
+                android:textColor="#000"
+        />
+
+
+
+        <Button
+                android:id="@+id/logout_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:layout_below="@id/account_heading"/>
+
+    </RelativeLayout>
+
+
 
 </FrameLayout>
