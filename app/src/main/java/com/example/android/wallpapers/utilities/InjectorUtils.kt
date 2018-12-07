@@ -11,8 +11,8 @@ import com.example.android.wallpapers.wallpapers.WallpaperViewModelProvider
 
 object InjectorUtils {
     fun provideWallpaperViewModelFactory(): WallpaperViewModelProvider {
-        val noteRepository = WallpaperRepository.getInstance()
-        return WallpaperViewModelProvider(noteRepository)
+        val wallpaperRepository = WallpaperRepository.getInstance()
+        return WallpaperViewModelProvider(wallpaperRepository)
     }
 
     fun provideCategoriesViewModelFactory(): CategorieViewModelProvider {
